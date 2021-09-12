@@ -1,4 +1,4 @@
-# Commande utiles la gesetion d'un reseau sous linux
+# Commande utiles pour la gesetion d'un reseau sous linux
 
 Petit dépôt pour lister les commandes utiles.
 
