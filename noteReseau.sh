@@ -8,6 +8,7 @@ neutre='\e[0;m'
 echo " "
 echo -e "${rouge}Les adresses ip présente ne sont la qu'à titre d'exmple"
 echo " "
+
 #Routage
 echo -e "${rouge}---------------- ROUTGE ----------------"
 echo -e "${neutre}Pour fixer l'interface de la machine"
@@ -27,3 +28,13 @@ echo -e "${vert}route add default gw 193.51.25.254"
 echo " " 
 echo -e "${neutre}Pour devenir routeur"
 echo -e "${vert}sysctl -w net.ipv4.ip_forward=1 (/etc/systl/conf)"
+echo " " 
+
+#PAR-FEU
+echo -e "${rouge}--------------- PAR-FEU ----------------"
+echo -e "${neutre}gestion du par-feu via la commande iptables"
+echo " "
+echo -e "Sens du paquet: ${vert} INPUT OUTPUT FORWARD"
+echo " "
+echo -e "${neutre}Actions possibles : ${vert} ACCEPT REJECT DROP LOG"
+
