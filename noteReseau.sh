@@ -37,4 +37,19 @@ echo " "
 echo -e "Sens du paquet: ${vert} INPUT OUTPUT FORWARD"
 echo " "
 echo -e "${neutre}Actions possibles : ${vert} ACCEPT REJECT DROP LOG"
-
+echo " "
+echo -e "${neutre}Exemple d'un scprite sur la configuration d'un par-feu"
+echo "
+	#!/bin/bash
+	# remise à 0 sans modifier la politique par défaut !
+	iptables -F
+	iptables -X
+	# politique par défaut
+	iptables -P INPUT DROP
+	iptables -P OUTPUT DROP
+	iptables -P FORWARD DROP
+	### mes règles
+	iptables -A ......
+	"
+echo "Syntaxe de base:"
+echo -e "${vert}iptables -A FORWARD -i eth0 -o eth1 -p tcp -s 10.192.0.0/16 -d 192.168.12.0/24  --sport 1024:65535 --dport 80 -j ACCEPT"
