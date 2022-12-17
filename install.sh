@@ -9,10 +9,27 @@ alias=$(echo $script | cut -f 1 -d .)
 #Copie du script dans le home
 cp ${script} $HOME/.${script}
 
-if [  $(grep -q "alias ${alias}=" $HOME/.bashrc) ];then
+grep -q "alias ${alias}=" $HOME/.bashrc
+retval=$?
+
+if [  "${retval}" != 0  ];then
    #Si l'alias n'est pas present on le construit
    #Puis l'alias est ajoute dans le bashrc
    echo -e "alias ${alias}='~/.${script}'" >> $HOME/.bashrc
 fi
 
-echo "Fini vous avez plus qu'à tapper note dans un terminal ^^ "
+
+if [ -f "${HOME}/.zshrc" ]; then
+
+   grep -q "alias ${alias}=" $HOME/.zshrc
+   retval=$?
+
+   if [  "${retval}" != 0 ];then
+      #Si l'alias n'est pas present on le construit
+      #Puis l'alias est ajoute dans le bashrc
+      echo -e "alias ${alias}='~/.${script}'" >> $HOME/.zshrc
+   fi
+
+fi
+
+echo "Fini vous avez plus qu'à tapper noteReseau dans un nouveau terminal !"
