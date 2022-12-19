@@ -23,4 +23,7 @@ Aperçu :
 
 ![](image/note.png)
 
-
+Suppression 
+```BASH
+./uninstall.sh
+```
